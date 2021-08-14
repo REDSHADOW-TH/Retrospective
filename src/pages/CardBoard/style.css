@@ -1,0 +1,20 @@
+.test {
+    color: tomato;
+    font-weight: bold;
+    background-color: blueviolet;
+    margin: 10px;
+}
+
+.board-item {
+    width: 350px;
+    min-height: 80%;
+    margin: 20px;
+}
+
+.add-icon {
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+}
