@@ -7,7 +7,7 @@
 
 .board-item {
     width: 350px;
-    min-height: 80%;
+    min-height: 15%;
     margin: 20px;
 }
 
@@ -17,4 +17,35 @@
     height: 25px;
     margin-right: 5px;
     cursor: pointer;
+}
+
+.card-style {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 70px;
+    color: white;
+}
+
+.retro-textarea {
+    min-height: 240px;
+}
+
+.retro-card-footer {
+    float: right;
+    position: relative;
+    padding: 10px;
+    display: inline;
+}
+
+.retro-card-footer-action-icon {
+    margin-right: 5px;
+    display: inline;
+}
+
+.ret.retro-card-footer-action-text {
+    font-size: 70%;
+    color: white;
+    margin-right: 10px;
 }

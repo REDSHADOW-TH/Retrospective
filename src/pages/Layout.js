@@ -5,7 +5,7 @@ export default function Layout() {
 
     const [showText, setShowText] = useState(false)
 
-    return <div className="d-flex flex-wrap justify-content-center align-items-center h-100 pl-5 pr-5t" style={{overflowY: 'scroll'}}>
+    return <div className="d-flex flex-wrap justify-content-center align-items-top h-100 pl-5 pr-5t" style={{overflowY: 'scroll'}}>
         <CardBoard />
     </div>
 }
