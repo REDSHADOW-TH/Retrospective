@@ -18,10 +18,10 @@ export default function Home(props, { children }) {
     }
 
     return <>
-        <BoardItem title="ความประทับใจ" color="springgreen" children={mockCards()} />
-        <BoardItem title="สิ่งที่ได้ทำเเละภูมิใจ" color="tomato" children={mockCards()} />
-        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" color="blueviolet" children={mockCards()} />
-        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" color="blueviolet" children={mockCards()} />
-        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" color="blueviolet" children={mockCards()} />
+        <BoardItem title="ความประทับใจ" children={mockCards()} />
+        <BoardItem title="สิ่งที่ได้ทำเเละภูมิใจ" children={mockCards()} />
+        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" children={mockCards()} />
+        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" children={mockCards()} />
+        <BoardItem title="สิ่งที่ควรเเก้เเละปรับปรุง" children={mockCards()} />
     </>
 }

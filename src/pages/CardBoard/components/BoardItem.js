@@ -52,6 +52,6 @@ export default function BoardItem(props) {
 }
 
 let styles = {
-    backgroundColor: 'gray',
+    backgroundColor: 'black',
     color: 'white',
 }
