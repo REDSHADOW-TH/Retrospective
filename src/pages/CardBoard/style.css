@@ -44,8 +44,15 @@
     display: inline;
 }
 
-.ret.retro-card-footer-action-text {
+.retro-card-footer-action-text {
     font-size: 70%;
     color: white;
     margin-right: 10px;
+}
+
+.retro-card-username {
+    float: left;
+    font-size: 85%;
+    color: white;
+    margin-left: 10px;
 }

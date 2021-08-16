@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react'
 import '../style.css'
-import addIcon from '../assets/add.png'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RetroCard from './RetroCard'
 import { Card, Modal, Button } from 'react-bootstrap'
+
 
 export default function BoardItem(props) {
     const [showAddModal, setShowAddModal] = useState(false)
@@ -27,7 +29,7 @@ export default function BoardItem(props) {
     return <>
         <Card className="card board-item">
             <Card.Header className="card-header text-center" style={{ ...styles, backgroundColor: props.color ?? styles.backgroundColor }}>
-                <b>{props.title}</b><img src={addIcon} alt="add card" className="add-icon" onClick={addModalShow} />
+                <b>{props.title}</b><FontAwesomeIcon className="add-icon"  icon={faPlusCircle} onClick={addModalShow} />
             </Card.Header>
             <Card.Body className="card-body">
                 {cards}

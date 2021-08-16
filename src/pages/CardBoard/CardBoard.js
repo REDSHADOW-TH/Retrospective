@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import BoardItem from './components/BoardItem'
-import RetroCard from './components/RetroCard'
 import './style.css'
 
 function mockCards() {
