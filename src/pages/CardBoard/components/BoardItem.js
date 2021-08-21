@@ -1,47 +1,71 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../style.css'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RetroCard from './RetroCard'
 import { Card, Modal, Button } from 'react-bootstrap'
+import { firestore } from '../../../firebase'
 
 
 export default function BoardItem(props) {
+
+    const [cards, setCards] = useState([])
     const [showAddModal, setShowAddModal] = useState(false)
-    
+
     const addModalShow = () => setShowAddModal(true)
     const addModalClose = () => setShowAddModal(false)
 
-    const [cards, setCards] = useState(props.children)
-
     const cardTextAdd = useRef(null)
-
     const cardColorAdd = useRef(null)
+
+    useEffect(() => {
+        fetchCards()
+    }, [])
+
+
+    function fetchCards() {
+        firestore.collection('boardItems')
+            .where('boardItemId', '==', props.id)
+            .orderBy('id', 'asc')
+            .onSnapshot((item) => {
+                const newCards = []
+                item.forEach((item) => {
+                    const i = item.data()
+                    newCards.push(<RetroCard text={i.text} color={i.color} />)
+                })
+                setCards(newCards)
+
+            })
+    }
 
     function addCard() {
         if (cardTextAdd.current.value && cardTextAdd.current.value !== '') {
-            console.log(cardTextAdd.current.value)
-            setCards([...cards, <RetroCard text={cardTextAdd.current.value} color={cardColorAdd.current.value} />])
+            firestore.collection('boardItems').add({
+                boardItemId: props.id,
+                id: parseInt((cards.length ?? 0) + 1),
+                text: cardTextAdd.current.value,
+                color: cardColorAdd.current.value
+            })
         }
         addModalClose()
     }
 
     return <>
-        <Card className="card board-item">
-            <Card.Header className="card-header text-center" style={{ ...styles, backgroundColor: props.color ?? styles.backgroundColor }}>
-                <b>{props.title}</b><FontAwesomeIcon className="add-icon"  icon={faPlusCircle} onClick={addModalShow} />
+        <Card className="board-item">
+            <Card.Header className="text-center" style={{ ...styles, backgroundColor: props.color ?? styles.backgroundColor }}>
+                <b>{props.title}</b><FontAwesomeIcon className="add-icon" icon={faPlusCircle} onClick={addModalShow} />
             </Card.Header>
-            <Card.Body className="card-body">
+            <Card.Body>
                 {cards}
             </Card.Body>
         </Card>
 
         <Modal show={showAddModal} on={addModalClose}>
             <Modal.Header>
-                <Modal.Title>เพิ่ม Retrospective Card</Modal.Title><span class="add-icon"><input type="color" ref={cardColorAdd} /></span>
+                <Modal.Title>เพิ่ม Retrospective Card</Modal.Title><span className="add-icon"><input type="color" ref={cardColorAdd} /></span>
             </Modal.Header>
             <Modal.Body>
-                <textarea class="form-control" placeholder="ใส่ข้อความที่ต้องการ....." ref={cardTextAdd} />
+                <textarea className="form-control" placeholder="ใส่ข้อความที่ต้องการ....." ref={cardTextAdd} />
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="danger" onClick={addModalClose}>ยกเลิก</Button>
@@ -52,6 +76,6 @@ export default function BoardItem(props) {
 }
 
 let styles = {
-    backgroundColor: 'black',
+    backgroundColor: '#2c3e50',
     color: 'white',
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CardBoard from './CardBoard/CardBoard'
 import { getUsername } from '../services/authService'
+import { Nav } from 'react-bootstrap';
 
 export default function Layout() {
 
@@ -9,12 +10,14 @@ export default function Layout() {
     const username = getUsername()
 
     if (username || username !== '') {
-        
-    }
 
-    return <div className="d-flex flex-wrap justify-content-center align-items-top h-100 pl-5 pr-5t" style={{overflowY: 'scroll'}}>
-        <CardBoard />
-    </div>
+    }
+    return <>
+        
+        <div className="d-flex flex-wrap justify-content-center align-items-top h-100 pl-5 pr-5t" style={{ overflowY: 'scroll' }}>
+            <CardBoard />
+        </div>
+    </>
 }
 
 const styles = {

@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.1.0",
+    "firebase": "^8.9.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
@@ -42,5 +43,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "firebaseConfig": {
+    "apiKey": "AIzaSyDtB4kSh_19Hx2NM5l1l07egKmjc9yCX1c",
+    "authDomain": "retro-for-ksauto.firebaseapp.com",
+    "projectId": "retro-for-ksauto",
+    "storageBucket": "retro-for-ksauto.appspot.com",
+    "messagingSenderId": "810991706715",
+    "appId": "1:810991706715:web:7625a81dc720cbbe90157e",
+    "measurementId": "G-NXX07T8RQG"
   }
 }
