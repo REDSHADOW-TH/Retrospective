@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "push:dev": "git add . && git commit -m'dev' && git push"
+    "push:dev": "git add . && git commit -m'dev' && git push",
+    "firebase:deploy": "rm -r firebase_host/public/* && cp -a build/. firebase_host/public && cd firebase_host && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
