@@ -1,21 +1,10 @@
-import React, { useState } from 'react'
-import CardBoard from './CardBoard/CardBoard'
-import { getUsername } from '../services/authService'
-import { Nav } from 'react-bootstrap';
+import React from 'react'
 
-export default function Layout() {
+export default function Layout({ children }) {
 
-    const [show, setShowText] = useState(false)
-
-    const username = getUsername()
-
-    if (username || username !== '') {
-
-    }
     return <>
-        
         <div className="d-flex flex-wrap justify-content-center align-items-top h-100 pl-5 pr-5t" style={{ overflowY: 'scroll' }}>
-            <CardBoard />
+            {children}
         </div>
     </>
 }
