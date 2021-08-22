@@ -9,22 +9,22 @@ export default function Layout({ children }) {
     </>
 }
 
-const styles = {
-    bg: {
-        backgroundColor: 'springgreen',
-        width: '100%',
-        height: '100%',
-    },
-    showText: {
-        color: 'black',
-        backgroundColor: '',
-        borderRadius: '10px',
-        opacity: '.8',
-    },
-    blurText: {
-        color: 'gray',
-        backgroundColor: 'gray',
-        borderRadius: '10px',
-        opacity: '.8',
-    }
-}
+// const styles = {
+//     bg: {
+//         backgroundColor: 'springgreen',
+//         width: '100%',
+//         height: '100%',
+//     },
+//     showText: {
+//         color: 'black',
+//         backgroundColor: '',
+//         borderRadius: '10px',
+//         opacity: '.8',
+//     },
+//     blurText: {
+//         color: 'gray',
+//         backgroundColor: 'gray',
+//         borderRadius: '10px',
+//         opacity: '.8',
+//     }
+// }
